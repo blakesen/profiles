@@ -2,21 +2,31 @@ package Profiles;
 
 import java.util.*;
 
-public class User {
+class User {
 	
 	private String userId;
 	private String firstName;
 	private String lastName;
 	private String address;
-	private int zipCode;
+	private String zipCode;
 	
 	private List<Card> cardsInfo;
 	
+	public User(String userId){
+		this(userId, "", "");
+	}
 	public User(String userId, String firstName, String lastName){
+		this(userId, firstName, lastName, "", "");
+	}
+	public User(String userId, String firstName, String lastName, String address, String zipcode){
 		this.userId=userId;
 		this.firstName=firstName;
 		this.lastName=lastName;
+		this.address=address;
+		this.zipCode=zipcode;
+		
 	}
+	
 	
 	public void setUserId(String userId){ 
 		this.userId = userId;
@@ -29,7 +39,7 @@ public class User {
 		return "%s%s".format(getLastName(), getFirstName());
 	}
 	
-	public void settLastName(String lastName){ 
+	public void setLastName(String lastName){ 
 		this.lastName = lastName;
 	}
 	
@@ -45,6 +55,10 @@ public class User {
 	}
 	public String getAddress(){ return this.address;}
 	
+	public void setZipCode(String zipcode){ 
+		this.zipCode = zipcode;
+	}
+	public String getZipCode(){return zipCode;}
 	
 	
 	
